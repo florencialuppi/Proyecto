@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerieFlixProyecto", "SerieFlixProyecto\SerieFlixProyecto.csproj", "{A323D3F5-67FF-4840-88C9-35448607260E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A323D3F5-67FF-4840-88C9-35448607260E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A323D3F5-67FF-4840-88C9-35448607260E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A323D3F5-67FF-4840-88C9-35448607260E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A323D3F5-67FF-4840-88C9-35448607260E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9F3C7AE-CEF5-4040-820F-878876950C55}
+	EndGlobalSection
+EndGlobal

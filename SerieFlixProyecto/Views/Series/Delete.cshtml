@@ -1,0 +1,56 @@
+﻿@model SerieFlixProyecto.Models.Series
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/Estilos.css" rel="stylesheet" />
+
+<div class="container">
+    <h2 class="titulos1">Borrar</h2>
+    <h3>Estas seguro de que quieres eliminar esta serie?</h3>
+</div>
+
+<div class="container">
+    <h4 class="subtitulos">Series</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Generos.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Generos.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idiomas.Idioma)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idiomas.Idioma)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn" />
+        </div>
+        <hr />
+        <div id="links">
+            @Html.ActionLink("Volver a la Lista", "Index")
+        </div>
+
+    }
+</div>

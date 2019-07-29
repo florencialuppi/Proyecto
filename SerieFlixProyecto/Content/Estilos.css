@@ -1,0 +1,47 @@
+﻿#banner {
+    background-image: linear-gradient(to right, #93291E, #ED213A);
+    color: white;
+    padding-top: 3%;
+}
+
+#home{
+    color: #ED213A;
+}
+
+.titulos1{
+    color:#ED213A;
+    padding-top:20px;
+    margin-bottom:20px;
+}
+
+#btn {
+    background-color: #ED213A;
+    border:none;
+    border-radius: 50px;
+    padding: 9px 25px;
+}
+
+#btn a{
+    color:white;
+}
+#buscar{
+    margin-top:20px;
+    margin-bottom:25px;
+}
+
+#links a{
+    color:#ED213A;
+}
+
+.btn {
+    background-color: #ED213A;
+    border: none;
+    border-radius: 50px;
+    padding: 9px 25px;
+    margin-top:15px;
+    color:white;
+}
+
+.subtitulos{
+    color:#ED213A;
+}

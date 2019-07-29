@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SerieFlixModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Generos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Genero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Series" Relationship="Self.FK_Series_Generos" FromRole="Generos" ToRole="Series" />
+  </EntityType>
+  <EntityType Name="Idiomas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Idioma" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Series" Relationship="Self.FK_Series_Idiomas" FromRole="Idiomas" ToRole="Series" />
+  </EntityType>
+  <EntityType Name="Series">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Genero" Type="Int32" Nullable="false" />
+    <Property Name="Idioma" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Generos" Relationship="Self.FK_Series_Generos" FromRole="Series" ToRole="Generos" />
+    <NavigationProperty Name="Idiomas" Relationship="Self.FK_Series_Idiomas" FromRole="Series" ToRole="Idiomas" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Series_Generos">
+    <End Role="Generos" Type="Self.Generos" Multiplicity="1" />
+    <End Role="Series" Type="Self.Series" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Generos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Series">
+        <PropertyRef Name="Genero" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Series_Idiomas">
+    <End Role="Idiomas" Type="Self.Idiomas" Multiplicity="1" />
+    <End Role="Series" Type="Self.Series" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Idiomas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Series">
+        <PropertyRef Name="Idioma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SerieFlixEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Generos" EntityType="Self.Generos" />
+    <EntitySet Name="Idiomas" EntityType="Self.Idiomas" />
+    <EntitySet Name="Series" EntityType="Self.Series" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_Series_Generos" Association="Self.FK_Series_Generos">
+      <End Role="Generos" EntitySet="Generos" />
+      <End Role="Series" EntitySet="Series" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Series_Idiomas" Association="Self.FK_Series_Idiomas">
+      <End Role="Idiomas" EntitySet="Idiomas" />
+      <End Role="Series" EntitySet="Series" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

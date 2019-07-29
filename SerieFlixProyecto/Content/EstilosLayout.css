@@ -1,0 +1,11 @@
+﻿.bg-light {
+    background-image: linear-gradient(to right, #93291E, #ED213A);
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav a {
+    color: white !important;
+}

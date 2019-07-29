@@ -1,0 +1,47 @@
+﻿@model SerieFlixProyecto.Models.Series
+
+@{
+    ViewBag.Title = "Detalles";
+}
+<link href="~/Content/Estilos.css" rel="stylesheet" />
+<div class="container">
+    <h2 class="titulos1">Detalles</h2>
+
+    <div>
+        <h4>Series</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Titulo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Generos.Genero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Generos.Genero)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Idiomas.Idioma)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Idiomas.Idioma)
+            </dd>
+        </dl>
+    </div>
+     <button id="btn">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.ID })
+    </button>
+<hr />
+<div id="links">
+    @Html.ActionLink("Volver a la Lista", "Index")
+</div>
+
+</div>

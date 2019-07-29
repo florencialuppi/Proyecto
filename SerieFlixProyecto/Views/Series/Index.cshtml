@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SerieFlixProyecto.Models.Series>
+
+@{
+    ViewBag.Title = "Series";
+}
+<script src="~/Scripts/Buscar.js"></script>
+<link href="~/Content/Estilos.css" rel="stylesheet" />
+<div class="container">
+    <h2 class="titulos1">SERIES</h2>
+    <button id="btn">
+        @Html.ActionLink("Agregar", "Create")
+    </button>
+    <input type="text" id="buscar" class="form-control" placeholder="Buscar" onkeyup="buscar()">
+</div>
+
+<div class="container">
+
+    <table class="table" id="tabla">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Generos.Genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idiomas.Idioma)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Generos.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idiomas.Idioma)
+                </td>
+                <td id="links">
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Borrar", "Delete", new { id = item.ID })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
